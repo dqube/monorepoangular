@@ -1,0 +1,55 @@
+@import '../drawer/style/theme/color';
+@import '../drawer/style/theme/variables';
+@import '../drawer/style/mixins/index';
+@import '../drawer/style/theme/shadow';
+@import '../drawer/style/theme/corner';
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.overlay-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.display-width {
+  left: 0;
+  right: 0;
+}
+
+.overlay-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $devui-shadow;
+  width: 100vw;
+  height: 100vh;
+}
+
+.drawer-nav,
+.drawer-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: $devui-border-radius;
+}
+
+.drawer-nav {
+  background: $devui-base-bg;
+}
+
+.drawer-content {
+  left: 0;
+  right: 0;
+  overflow: auto;
+  box-shadow: $devui-shadow-length-fullscreen-overlay $devui-shadow;
+}

@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fse-form/core": ["libs/common/ui/form/core/src/index.ts"],
+      "@fse/lookup": ["libs/common/lookup/src/index.ts"],
+      "@fse-form/web/material": ["libs/web/ui/form/material/src/index.ts"],
+      "@fse/web/grid": ["libs/web/ui/grid/grid/src/index.ts"],
+      "@fse-form/core/select": ["libs/common/ui/form/core/select/index.ts"],
+      "@fse-form/web/sync": ["libs/web/ui/form/sync/src/index.ts"],
+      "@fse/web/drawer": ["libs/web/ui/drawer/src/index.ts"],
+      "@fse/web/dataview": ["libs/web/ui/dataview/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

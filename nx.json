@@ -1,0 +1,58 @@
+{
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "fse",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "common-ui-form-core": {
+      "tags": []
+    },
+    "common-lookup": {
+      "tags": []
+    },
+    "web-ui-form-material": {
+      "tags": []
+    },
+    "web-ui-grid-grid": {
+      "tags": []
+    },
+    "web-ui-form-sync": {
+      "tags": []
+    },
+    "clinic": {
+      "tags": []
+    },
+    "clinic-e2e": {
+      "tags": [],
+      "implicitDependencies": ["clinic"]
+    },
+    "ems": {
+      "tags": []
+    },
+    "ems-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ems"]
+    },
+    "web-ui-drawer": {
+      "tags": []
+    },
+    "web-ui-dataview": {
+      "tags": []
+    }
+  }
+}

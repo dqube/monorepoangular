@@ -1,0 +1,14 @@
+// 字号大小变量
+@import '../theme/font';
+
+@mixin font-content() {
+  font-size: $devui-font-size;
+  font-weight: $devui-font-content-weight;
+  line-height: $devui-line-height-base;
+}
+
+@mixin font-title($font-size: $devui-font-size-page-title) {
+  font-size: $font-size;
+  font-weight: $devui-font-title-weight;
+  line-height: $devui-line-height-base;
+}

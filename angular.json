@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "ems",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "common-ui-form-core": {
+      "projectType": "library",
+      "root": "libs/common/ui/form/core",
+      "sourceRoot": "libs/common/ui/form/core/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/common/ui/form/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/common/ui/form/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/common/ui/form/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/ui/form/core"],
+          "options": {
+            "jestConfig": "libs/common/ui/form/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/ui/form/core/src/**/*.ts",
+              "libs/common/ui/form/core/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "common-lookup": {
+      "projectType": "library",
+      "root": "libs/common/lookup",
+      "sourceRoot": "libs/common/lookup/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/common/lookup/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/common/lookup/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/common/lookup/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/common/lookup"],
+          "options": {
+            "jestConfig": "libs/common/lookup/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/lookup/src/**/*.ts",
+              "libs/common/lookup/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "web-ui-form-material": {
+      "projectType": "library",
+      "root": "libs/web/ui/form/material",
+      "sourceRoot": "libs/web/ui/form/material/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/web/ui/form/material/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/ui/form/material/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/ui/form/material/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/form/material"],
+          "options": {
+            "jestConfig": "libs/web/ui/form/material/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/form/material/src/**/*.ts",
+              "libs/web/ui/form/material/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "web-ui-grid-grid": {
+      "projectType": "library",
+      "root": "libs/web/ui/grid/grid",
+      "sourceRoot": "libs/web/ui/grid/grid/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/web/ui/grid/grid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/ui/grid/grid/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/ui/grid/grid/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/grid/grid"],
+          "options": {
+            "jestConfig": "libs/web/ui/grid/grid/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/grid/grid/src/**/*.ts",
+              "libs/web/ui/grid/grid/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "web-ui-form-sync": {
+      "projectType": "library",
+      "root": "libs/web/ui/form/sync",
+      "sourceRoot": "libs/web/ui/form/sync/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/web/ui/form/sync/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/ui/form/sync/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/ui/form/sync/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/form/sync"],
+          "options": {
+            "jestConfig": "libs/web/ui/form/sync/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/form/sync/src/**/*.ts",
+              "libs/web/ui/form/sync/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "clinic": {
+      "projectType": "application",
+      "root": "apps/clinic",
+      "sourceRoot": "apps/clinic/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/clinic",
+            "index": "apps/clinic/src/index.html",
+            "main": "apps/clinic/src/main.ts",
+            "polyfills": "apps/clinic/src/polyfills.ts",
+            "tsConfig": "apps/clinic/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/clinic/src/favicon.ico", "apps/clinic/src/assets"],
+            "styles": ["apps/clinic/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/clinic/src/environments/environment.ts",
+                  "with": "apps/clinic/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "clinic:build:production"
+            },
+            "development": {
+              "browserTarget": "clinic:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "clinic:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/clinic/src/**/*.ts",
+              "apps/clinic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/clinic"],
+          "options": {
+            "jestConfig": "apps/clinic/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "clinic-e2e": {
+      "root": "apps/clinic-e2e",
+      "sourceRoot": "apps/clinic-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/clinic-e2e/cypress.json",
+            "tsConfig": "apps/clinic-e2e/tsconfig.e2e.json",
+            "devServerTarget": "clinic:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "clinic:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/clinic-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ems": {
+      "projectType": "application",
+      "root": "apps/ems",
+      "sourceRoot": "apps/ems/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "rxjs-compat",
+              "@ks89/angular-modal-gallery",
+              "mousetrap",
+              "hammerjs",
+              "firebase/app",
+              "dragula",
+              "knob",
+              "chartist",
+              "chartjs-plugin-streaming",
+              "@firebase/app",
+              "chart.js",
+              "dom-set",
+              "crossvent",
+              "contra/emitter",
+              "ev-emitter/ev-emitter",
+              "get-size/get-size",
+              "outlayer/outlayer",
+              "rxjs",
+              "ngx-masonry",
+              "@firebase/component",
+              "@firebase/firestore",
+              "@firebase/auth",
+              "@firebase/util",
+              "rxjs/operators",
+              "rxjs/Subject",
+              "rxjs/internal/operators",
+              "rxjs/internal/observable/of",
+              "rxjs/add/operator/map",
+              "rxjs/Subscription",
+              "masonry-layout",
+              "imagesloaded",
+              "rxjs-compat/add/operator/map",
+              "@mattlewis92/dom-autoscroller",
+              "dom-plane",
+              "@mattlewis92/dom-autoscroller",
+              "@tweenjs/tween.js",
+              "photoswipe",
+              "photoswipe/dist/photoswipe-ui-default",
+              "angular-calendar/date-adapters/date-fns",
+              "apexcharts",
+              "apexcharts/dist/apexcharts.min.js",
+              "calendar-utils/date-adapters/date-fns"
+            ],
+            "outputPath": "dist/apps/ems",
+            "index": "apps/ems/src/index.html",
+            "main": "apps/ems/src/main.ts",
+            "polyfills": "apps/ems/src/polyfills.ts",
+            "tsConfig": "apps/ems/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/ems/src/favicon.ico.png", "apps/ems/src/assets"],
+            "styles": [
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "apps/ems/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ems/src/environments/environment.ts",
+                  "with": "apps/ems/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ems:build:production"
+            },
+            "development": {
+              "browserTarget": "ems:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ems:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ems/src/**/*.ts",
+              "apps/ems/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ems"],
+          "options": {
+            "jestConfig": "apps/ems/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ems-e2e": {
+      "root": "apps/ems-e2e",
+      "sourceRoot": "apps/ems-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ems-e2e/cypress.json",
+            "tsConfig": "apps/ems-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ems:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ems:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ems-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "web-ui-drawer": {
+      "projectType": "library",
+      "root": "libs/web/ui/drawer",
+      "sourceRoot": "libs/web/ui/drawer/src",
+      "prefix": "fse",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "project": "libs/web/ui/drawer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/ui/drawer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/ui/drawer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/drawer"],
+          "options": {
+            "jestConfig": "libs/web/ui/drawer/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/drawer/src/**/*.ts",
+              "libs/web/ui/drawer/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "web-ui-dataview": {
+      "projectType": "library",
+      "root": "libs/web/ui/dataview",
+      "sourceRoot": "libs/web/ui/dataview/src",
+      "prefix": "fse",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/dataview"],
+          "options": {
+            "jestConfig": "libs/web/ui/dataview/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/dataview/src/**/*.ts",
+              "libs/web/ui/dataview/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

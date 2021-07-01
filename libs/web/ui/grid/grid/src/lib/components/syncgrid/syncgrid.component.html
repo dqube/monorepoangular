@@ -1,0 +1,45 @@
+
+<div id="maincontent" class="content">
+<ejs-grid 
+#grid
+[id]="id"
+[dataSource]='gridData'
+  [toolbar]="toolbar"
+  [allowSorting]="allowSorting"
+  [sortSettings]='sortSettings'
+  [searchSettings]='searchSettings'
+  [allowPaging]="allowPaging"
+  [pageSettings]="pageSettings"
+  [allowResizing]="allowResizing"
+  [allowFiltering]="allowFiltering"
+  [allowPdfExport]='true'
+  [allowExcelExport]='true'
+  (rowSelected)="rowIsSelected($event)"
+  (dataStateChange)="onDataStateChanged($event)"
+  (commandClick)='commandClick($event)'
+  (toolbarClick)="toolbarClick($event)"
+  (actionComplete)="actionEndHandler($event)"
+  [filterSettings]="filterSettings">
+    <e-columns>
+        <ng-template ngFor let-column [ngForOf]="columns">
+            <e-column [field]="column.field"
+            [headerText]="column.headerText"
+            [width]="column.width"
+            [textAlign]="column.textAlign"
+            [headerTextAlign]="column.hederAlign"
+            [visible]="column.visible"
+            [type]="column.type"
+            [allowSorting]="column.allowSorting"
+            [format]="column.format">
+        </e-column>
+        </ng-template>
+        <e-column
+      headerText="Actions"
+      [commands]="commands"
+      *ngIf="commands.length > 0"
+      textAlign="center"
+    >
+    </e-column>
+    </e-columns>
+</ejs-grid> 
+</div>

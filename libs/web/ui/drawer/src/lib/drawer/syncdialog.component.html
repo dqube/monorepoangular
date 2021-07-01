@@ -1,0 +1,15 @@
+
+<ejs-dialog #syncdialog [width]="width">	
+  <div class="modal-content"
+      #drawerContainer>
+      <div class="modal-header customizer-header">
+        <i class="icofont-close icon-close" (click)="closeClick()"></i>
+         <h5>Preview Settings</h5>
+      
+      </div>
+      <div class="modal-body">
+        <ng-template syncDialogContentHost ></ng-template>
+      </div>
+  
+</div>
+</ejs-dialog>

@@ -1,0 +1,14 @@
+<ejs-sidebar id="default-sidebar" #sidebar [type]='type' [target]='target' (created)="onCreated($event)" 
+(open) = "onOpened($event)"
+(close) = "onClosed($event)"
+position="Right" [width]='width' 
+[showBackdrop]='backdropCloseable'> 
+  <div #drawerContainer>
+     
+ 
+<ng-template syncDrawerContentHost></ng-template>
+<div class="center-align">
+  <button  id="close" (click)="closeClick()" class="e-btn close-btn">Close Sidebar</button>
+</div>
+</div>
+</ejs-sidebar>

@@ -1,0 +1,9 @@
+<h6>samplecontent works!{{title}}</h6>
+<div class="col-sm-12">
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+   
+  </form>
+  </div>
